@@ -1,0 +1,7 @@
+{
+  "name": "Encontre o Job",
+  "description": "Plataforma premium para conectar clientes a prestadores de serviços qualificados, potencializada por IA.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
