@@ -46,12 +46,12 @@ export const GeminiAssistant: React.FC = () => {
 
   return (
     <div className="w-full max-w-4xl mx-auto mb-12">
-      <div className="bg-slate-900/50 border border-amber-500/20 rounded-2xl p-6 backdrop-blur-md">
+      <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-xl shadow-slate-200/50">
         <div className="flex items-center gap-3 mb-4">
-          <div className="bg-amber-500/10 p-2 rounded-lg">
-            <Bot className="w-6 h-6 text-amber-400" />
+          <div className="bg-amber-100 p-2 rounded-lg">
+            <Bot className="w-6 h-6 text-amber-600" />
           </div>
-          <h2 className="text-xl font-bold text-slate-100">Assistente Inteligente</h2>
+          <h2 className="text-xl font-bold text-slate-800">Assistente Inteligente</h2>
         </div>
         
         <form onSubmit={handleSearch} className="relative mb-6">
@@ -60,26 +60,26 @@ export const GeminiAssistant: React.FC = () => {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Pergunte sobre preços médios, lojas próximas ou dicas de contratação..."
-            className="w-full bg-slate-950 border border-slate-700 text-slate-100 rounded-xl px-4 py-4 pr-12 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all placeholder-slate-500"
+            className="w-full bg-slate-50 border border-slate-300 text-slate-900 rounded-xl px-4 py-4 pr-12 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all placeholder-slate-400"
           />
           <button 
             type="submit" 
             disabled={loading}
-            className="absolute right-2 top-2 bottom-2 bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold px-4 rounded-lg flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="absolute right-2 top-2 bottom-2 bg-amber-500 hover:bg-amber-600 text-white font-bold px-4 rounded-lg flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-sm"
           >
             {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Sparkles className="w-5 h-5" />}
           </button>
         </form>
 
         {error && (
-            <div className="p-4 bg-red-900/20 border border-red-500/30 text-red-300 rounded-lg text-sm">
+            <div className="p-4 bg-red-50 border border-red-200 text-red-600 rounded-lg text-sm">
                 {error}
             </div>
         )}
 
         {response && (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 space-y-6">
-            <div className="prose prose-invert prose-amber max-w-none text-slate-300 leading-relaxed">
+            <div className="prose prose-slate max-w-none text-slate-700 leading-relaxed">
               <ReactMarkdown>{response.text}</ReactMarkdown>
             </div>
 
@@ -94,16 +94,16 @@ export const GeminiAssistant: React.FC = () => {
                         href={chunk.maps.uri} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="flex flex-col p-4 bg-slate-800/50 border border-slate-700 rounded-lg hover:bg-slate-800 hover:border-amber-400/50 transition-all group"
+                        className="flex flex-col p-4 bg-slate-50 border border-slate-200 rounded-lg hover:bg-white hover:border-amber-400 hover:shadow-md transition-all group"
                       >
                         <div className="flex items-center gap-2 mb-2">
-                          <MapPin className="w-5 h-5 text-red-400" />
-                          <span className="font-semibold text-slate-200 group-hover:text-amber-400 transition-colors">
+                          <MapPin className="w-5 h-5 text-red-500" />
+                          <span className="font-semibold text-slate-800 group-hover:text-amber-600 transition-colors">
                             {chunk.maps.title}
                           </span>
                         </div>
                          {chunk.maps.placeAnswerSources?.reviewSnippets?.[0] && (
-                             <p className="text-xs text-slate-400 italic mb-2">"{chunk.maps.placeAnswerSources.reviewSnippets[0].content}"</p>
+                             <p className="text-xs text-slate-500 italic mb-2">"{chunk.maps.placeAnswerSources.reviewSnippets[0].content}"</p>
                          )}
                         <span className="text-xs text-slate-500 flex items-center gap-1 mt-auto">
                           Ver no Google Maps <ExternalLink className="w-3 h-3" />
@@ -118,11 +118,11 @@ export const GeminiAssistant: React.FC = () => {
                         href={chunk.web.uri} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="flex flex-col p-4 bg-slate-800/50 border border-slate-700 rounded-lg hover:bg-slate-800 hover:border-blue-400/50 transition-all group"
+                        className="flex flex-col p-4 bg-slate-50 border border-slate-200 rounded-lg hover:bg-white hover:border-blue-400 hover:shadow-md transition-all group"
                       >
                         <div className="flex items-center gap-2 mb-2">
-                          <ExternalLink className="w-4 h-4 text-blue-400" />
-                          <span className="font-semibold text-slate-200 group-hover:text-blue-300 transition-colors line-clamp-1">
+                          <ExternalLink className="w-4 h-4 text-blue-500" />
+                          <span className="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1">
                             {chunk.web.title}
                           </span>
                         </div>
