@@ -32,7 +32,7 @@ function App() {
 
           <div className="flex items-center gap-6">
             <nav className="hidden md:flex gap-6 text-sm font-medium text-slate-600">
-              <a href="#" className="hover:text-amber-600 transition-colors">Explorar</a>
+              <a href="#" className="hover:text-amber-600 transition-colors">Pesquisar</a>
               <a href="#" className="hover:text-amber-600 transition-colors">Meus Projetos</a>
               <a href="#" className="hover:text-amber-600 transition-colors">Mensagens</a>
             </nav>
@@ -67,7 +67,7 @@ function App() {
               </span>
             </h1>
             <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-10">
-              Conectamos você aos melhores profissionais da sua região, para qualquer projeto, de reparos rápidos a grandes soluções.
+              Conectamos você aos melhores profissionais da sua região. De reparos rápidos a grandes soluções.
             </p>
             
             <GeminiAssistant />
